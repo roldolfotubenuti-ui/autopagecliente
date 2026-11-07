@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PARABENS FELA - AUTOMATIZE TUDO 100%</title>
+  <link rel="icon" type="image/png" href="assets/mascot.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Estrutura Principal -->
+  <main class="main-wrapper">
+    <div class="layout-grid">
+      
+      <!-- Lado Esquerdo: Card da Mascote -->
+      <section class="left-col" aria-label="Ilustração de Boas-vindas">
+        <img 
+          src="assets/mascot.png" 
+          srcset="assets/mascot.png 1x, assets/mascot@2x.png 2x"
+          alt="Mascote AutoWin Comemorando" 
+          class="mascot-card"
+          draggable="false"
+        >
+      </section>
+
+      <!-- Divisor Vertical Central -->
+      <div class="divider-col" aria-hidden="true">
+        <div class="vertical-divider"></div>
+      </div>
+
+      <!-- Lado Direito: Título e Botões de Ação -->
+      <section class="right-col" aria-label="Ações de Entrega">
+        
+        <!-- Header -->
+        <header class="header-area">
+          <div class="title-row">
+            <span class="text-parabens">PARABENS</span>
+            <div class="badge-fela-container">
+              <span class="text-fela">FELA</span>
+            </div>
+          </div>
+          <div class="subtitle-row">
+            <h1 class="text-subtitle">AUTOMATIZE TUDO 100%</h1>
+          </div>
+        </header>
+
+        <!-- Botões Funcionais -->
+        <div class="buttons-group">
+          
+          <!-- Botão 1: Enviar Dados -->
+          <button id="btnEnviarDados" class="btn-action btn-dark" type="button" aria-haspopup="dialog" aria-expanded="false">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+            <span class="btn-text">Enviar Dados</span>
+          </button>
+
+          <!-- Botão 2: Download do Arquivo -->
+          <button id="btnDownload" class="btn-action btn-purple" type="button">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            <span class="btn-text">Download do Arquivo</span>
+          </button>
+
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Modal Confirmação de Download: Já enviou seus dados? -->
+  <div id="modalConfirmDownload" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modalConfirmTitle">
+    <div class="modal-card modal-confirm-card">
+      <button id="btnConfirmClose" class="modal-close-btn" type="button" aria-label="Fechar">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="confirm-content">
+        <div class="confirm-icon-wrap">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="12"></line>
+            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+          </svg>
+        </div>
+
+        <h2 id="modalConfirmTitle" class="confirm-title">Já enviou seus dados?</h2>
+        <p class="confirm-desc">
+          É importante que envie seus dados para que possamos habilitar seu acesso.
+        </p>
+
+        <div class="confirm-actions">
+          <button type="button" id="btnConfirmarBaixar" class="btn-confirm-download">
+            <svg class="btn-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            <span>Enviei os dados, posso baixar</span>
+          </button>
+
+          <button type="button" id="btnIrEnviarDados" class="btn-confirm-secondary">
+            <span>Ainda não enviei (Enviar Dados Agora)</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Container de Toasts de Notificação -->
+  <div id="toastContainer" class="toast-container" aria-live="polite"></div>
+
+  <!-- Scripts -->
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+
